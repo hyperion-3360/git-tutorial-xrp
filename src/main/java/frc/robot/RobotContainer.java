@@ -59,7 +59,7 @@ public class RobotContainer {
     // Example of how to use the onboard IO
     Trigger userButton = new Trigger(m_onboardIO::getUserButtonPressed);
     userButton
-        .onTrue(new PrintCommand("Bontou USER Appuyé"))
+        .onTrue(new PrintCommand("Bouton USER Appuyé"))
         .onFalse(new PrintCommand("Bouton USER Relâché"));
 
     JoystickButton joystickAButton = new JoystickButton(m_controller, 1);
