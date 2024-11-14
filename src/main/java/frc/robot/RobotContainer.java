@@ -17,7 +17,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.xrp.XRPOnBoardIO;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
-import edu.wpi.first.wpilibj2.command.PrintCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
@@ -56,11 +55,11 @@ public class RobotContainer {
     // is scheduled over it.
     m_drivetrain.setDefaultCommand(getArcadeDriveCommand());
 
-    // Example of how to use the onboard IO
+    //Bouton = LED youpi :)
     Trigger userButton = new Trigger(m_onboardIO::getUserButtonPressed);
     userButton
-        .onTrue(new PrintCommand("USER Button Pressed"))
-        .onFalse(new PrintCommand("USER Button Released"));
+        .onTrue(new InstantCommand(() -> m_onboardIO.setLed(true)))
+        .onFalse(new InstantCommand(() -> m_onboardIO.setLed(false)));
 
     JoystickButton joystickAButton = new JoystickButton(m_controller, 1);
     joystickAButton
