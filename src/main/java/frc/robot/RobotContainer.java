@@ -60,7 +60,7 @@ public class RobotContainer {
     Trigger userButton = new Trigger(m_onboardIO::getUserButtonPressed);
     userButton
         .onTrue(new PrintCommand("USER Button Pressed"))
-        .onFalse(new PrintCommand("USER Button Released"));
+        .onFalse(new InstantCommand("USER Button Released"));
 
     JoystickButton joystickAButton = new JoystickButton(m_controller, 1);
     joystickAButton
