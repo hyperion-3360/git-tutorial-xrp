@@ -7,7 +7,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class BrasArm extends SubsystemBase {
-  /** Creates a bras-arm. */
+  /** Creates a bras-arm. (Crée un bras-arm.) */
   public BrasArm() {
 
   }
@@ -19,5 +19,6 @@ public class BrasArm extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    // Cette méthode sera appelée une fois par course du planificateur
   }
 }
