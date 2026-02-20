@@ -4,10 +4,13 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.XRPDrivetrain;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -21,6 +24,8 @@ public class RobotContainer {
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_xrpDrivetrain);
 
+  private final Joystick m_logitechController = new Joystick(0);
+
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
@@ -33,7 +38,21 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
-  private void configureButtonBindings() {}
+  private void configureButtonBindings() {
+    // Define Joystick buttons
+    JoystickButton joystickXButton = new JoystickButton(m_logitechController, 1);
+    JoystickButton joystickAButton = new JoystickButton(m_logitechController, 2);
+    JoystickButton joystickBButton = new JoystickButton(m_logitechController, 3);
+    JoystickButton joystickYButton = new JoystickButton(m_logitechController, 4);
+    JoystickButton joystickLBButton = new JoystickButton(m_logitechController, 5);
+    JoystickButton joystickRBButton = new JoystickButton(m_logitechController, 6);
+    JoystickButton joystickLTButton = new JoystickButton(m_logitechController, 7);
+    JoystickButton joystickRTButton = new JoystickButton(m_logitechController, 8);
+    JoystickButton joystickBackButton = new JoystickButton(m_logitechController, 9);
+    JoystickButton joystickStartButton = new JoystickButton(m_logitechController, 10);
+    JoystickButton joystickLJoystickPressButton = new JoystickButton(m_logitechController, 11);
+    JoystickButton joystickRightJoystickPressButton = new JoystickButton(m_logitechController, 12);
+  }
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
